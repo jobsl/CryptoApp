@@ -33,7 +33,7 @@ companion object {
     private const val QUERY_PARAM_FROM_SYMBOLS = "fsyms"
 
     private const val CURRENCY = "USD"
-    private const val API_KEY = "" //79ee9cbe03af138257e72a9fda125d285284600d431b121748455b6c8d699fb4
+    private const val API_KEY = ""
 
 }
 
