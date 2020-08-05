@@ -19,8 +19,8 @@ interface ApiService {
     @GET("pricemultifull")
     fun getFullPriceList(
         @Query(QUERY_PARAM_API_KEY) apiKey: String = API_KEY,
-        @Query(QUERY_PARAM_FROM_SYMBOLS) fsyms: String,
-        @Query(QUERY_PARAM_TO_SYMBOLS) tsyms: String = CURRENCY
+        @Query(QUERY_PARAM_FROM_SYMBOLS) fSyms: String,
+        @Query(QUERY_PARAM_TO_SYMBOLS) tSyms: String = CURRENCY
 
     ): Single<CoinPriceInfoRawData>
 
