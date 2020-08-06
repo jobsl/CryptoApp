@@ -34,7 +34,7 @@ data class CoinPriceInfo(
 
     @SerializedName("PRICE")
     @Expose
-    val price: Double?,
+    val price: String?,
 
     @SerializedName("LASTUPDATE")
     @Expose
