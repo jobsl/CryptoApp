@@ -42,15 +42,15 @@ data class CoinPriceInfo(
 
     @SerializedName("MEDIAN")
     @Expose
-    val median: Double?,
+    val median: String?,
 
     @SerializedName("LASTVOLUME")
     @Expose
-    val lastVolume: Double?,
+    val lastVolume: String?,
 
     @SerializedName("LASTVOLUMETO")
     @Expose
-    val lastVolumeTO: Double?,
+    val lastVolumeTO: String?,
 
     @SerializedName("LASTTRADEID")
     @Expose
@@ -58,43 +58,43 @@ data class CoinPriceInfo(
 
     @SerializedName("VOLUMEDAY")
     @Expose
-    val volumeDay: Double?,
+    val volumeDay: String?,
 
     @SerializedName("VOLUMEDAYTO")
     @Expose
-    val volumeDayTo: Double?,
+    val volumeDayTo: String?,
 
     @SerializedName("VOLUME24HOUR")
     @Expose
-    val volume24Hour: Double?,
+    val volume24Hour: String?,
 
     @SerializedName("VOLUME24HOURTO")
     @Expose
-    val volume24HourTo: Double?,
+    val volume24HourTo: String?,
 
     @SerializedName("OPENDAY")
     @Expose
-    val openDay: Double?,
+    val openDay: String?,
 
     @SerializedName("HIGHDAY")
     @Expose
-    val highDay: Double?,
+    val highDay: String?,
 
     @SerializedName("LOWDAY")
     @Expose
-    val lowDay: Double?,
+    val lowDay: String?,
 
     @SerializedName("OPEN24HOUR")
     @Expose
-    val open24Hour: Double?,
+    val open24Hour: String?,
 
     @SerializedName("HIGH24HOUR")
     @Expose
-    val high24Hour: Double?,
+    val high24Hour: String?,
 
     @SerializedName("LOW24HOUR")
     @Expose
-    val low24Hour: Double?,
+    val low24Hour: String?,
 
     @SerializedName("LASTMARKET")
     @Expose
@@ -102,55 +102,55 @@ data class CoinPriceInfo(
 
     @SerializedName("VOLUMEHOUR")
     @Expose
-    val volumeHour: Double?,
+    val volumeHour: String?,
 
     @SerializedName("VOLUMEHOURTO")
     @Expose
-    val volumeHourTo: Double?,
+    val volumeHourTo: String?,
 
     @SerializedName("OPENHOUR")
     @Expose
-    val openHour: Double?,
+    val openHour: String?,
 
     @SerializedName("HIGHHOUR")
     @Expose
-    val highHour: Double?,
+    val highHour: String?,
 
     @SerializedName("LOWHOUR")
     @Expose
-    val lowHour: Double?,
+    val lowHour: String?,
 
     @SerializedName("TOPTIERVOLUME24HOUR")
     @Expose
-    val topTierVolume24Hour: Double?,
+    val topTierVolume24Hour: String?,
 
     @SerializedName("TOPTIERVOLUME24HOURTO")
     @Expose
-    val topTierVolume24HourTo: Double?,
+    val topTierVolume24HourTo: String?,
 
     @SerializedName("CHANGE24HOUR")
     @Expose
-    val change24Hour: Double?,
+    val change24Hour: String?,
 
     @SerializedName("CHANGEPCT24HOUR")
     @Expose
-    val changePCT24Hour: Double?,
+    val changePCT24Hour: String?,
 
     @SerializedName("CHANGEDAY")
     @Expose
-    val changeDay: Double?,
+    val changeDay: String?,
 
     @SerializedName("CHANGEPCTDAY")
     @Expose
-    val changePCTDay: Double?,
+    val changePCTDay: String?,
 
     @SerializedName("CHANGEHOUR")
     @Expose
-    val changeHour: Double?,
+    val changeHour: String?,
 
     @SerializedName("CHANGEPCTHOUR")
     @Expose
-    val changePCTHour: Double?,
+    val changePCTHour: String?,
 
     @SerializedName("CONVERSIONTYPE")
     @Expose
@@ -162,27 +162,27 @@ data class CoinPriceInfo(
 
     @SerializedName("SUPPLY")
     @Expose
-    val supply: Int?,
+    val supply: String?,
 
     @SerializedName("MKTCAP")
     @Expose
-    val mktCap: Double?,
+    val mktCap: String?,
 
     @SerializedName("TOTALVOLUME24H")
     @Expose
-    val totalVolume24Hour: Double?,
+    val totalVolume24Hour: String?,
 
     @SerializedName("TOTALVOLUME24HTO")
     @Expose
-    val totalVolume24HourTo: Double?,
+    val totalVolume24HourTo: String?,
 
     @SerializedName("TOTALTOPTIERVOLUME24H")
     @Expose
-    val totalTopTierVolume24Hour: Double?,
+    val totalTopTierVolume24Hour: String?,
 
     @SerializedName("TOTALTOPTIERVOLUME24HTO")
     @Expose
-    val totalTopTierVolume24HourTo: Double?,
+    val totalTopTierVolume24HourTo: String?,
 
     @SerializedName("IMAGEURL")
     @Expose
