@@ -1,15 +1,24 @@
-package com.point56.android.cryptoapp.pojo
-
+package com.point56.android.cryptoapp.data.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
-import com.point56.android.cryptoapp.api.ApiFactory.BASE_IMAGE_URL
-import com.point56.android.cryptoapp.utils.convertTimestamToTime
 
 @Entity(tableName = "full_price_list")
-data class CoinPriceInfo(
+data class CoinInfoDbModel(
+    @PrimaryKey
+    val fromSymbol: String,
+    val toSymbol: String?,
+    val price: String?,
+    val lastUpdate: Long?,
+    val highDay: String?,
+    val lowDay: String?,
+    val lastMarket: String?,
+    val imageURL: String
+)
+
+/*
+@Entity(tableName = "full_price_list")
+data class CoinInfoDbModel(
 
     @SerializedName("TYPE")
     @Expose
@@ -186,7 +195,7 @@ data class CoinPriceInfo(
 
     @SerializedName("IMAGEURL")
     @Expose
-    val imageURL: String?
+    val imageUrl: String?
 
 ) {
     fun getFormattedTime(): String {
@@ -194,7 +203,7 @@ data class CoinPriceInfo(
         return convertTimestamToTime(lastUpdate)
     }
 
-    fun getFullImageUrl(): String{
-        return BASE_IMAGE_URL + imageURL
+    fun getFullImageUrl(): String {
+        return ApiFactory.BASE_IMAGE_URL + imageUrl
     }
-}
+}*/
