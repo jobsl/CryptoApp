@@ -4,36 +4,28 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import com.point56.android.cryptoapp.R
 import com.point56.android.cryptoapp.databinding.ActivityCoinDetailBinding
-import com.squareup.picasso.Picasso
 
 class CoinDetailActivity : AppCompatActivity() {
 
-    private val coinViewModel by lazy {
-        ViewModelProvider(this)[CoinViewModel::class.java]
+    private val binding by lazy {
+        ActivityCoinDetailBinding.inflate(layoutInflater)
     }
-
-    private lateinit var binding: ActivityCoinDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCoinDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if (!intent.hasExtra(EXTRA_FROM_SYMBOL)) {
             finish()
             return
         }
         val fromSymbol = intent.getStringExtra(EXTRA_FROM_SYMBOL) ?: EMPTY_SYMBOL
-        coinViewModel.getDetailInfo(fromSymbol).observe(this) {
-            binding.tvPrice.text = it.price
-            binding.tvMinPrice.text = it.lowDay
-            binding.tvMaxPrice.text = it.highDay
-            binding.tvLastMarket.text = it.lastMarket
-            binding.tvLastUpdate.text = it.lastUpdate
-            binding.tvFromSymbol.text = it.fromSymbol
-            binding.tvToSymbol.text = it.toSymbol
-            Picasso.get().load(it.imageUrl).into(binding.ivLogoCoin)
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, CoinDetailFragment.newInstance(fromSymbol))
+                .commit()
         }
     }
 
