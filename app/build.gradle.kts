@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-
+    alias(libs.plugins.ksp)
     id("kotlin-kapt")
 }
 
@@ -63,5 +63,13 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.picasso)
+
+    //Dagger2
+    implementation(libs.dagger2)
+    //Dagger2 code generator
+    ksp(libs.dagger2.compiler)
+    //Dagger2 аннотации
+    ksp(libs.dagger2.android.processor)
+
 
 }
