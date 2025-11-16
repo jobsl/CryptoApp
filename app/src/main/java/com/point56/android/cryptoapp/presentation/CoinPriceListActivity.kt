@@ -7,20 +7,26 @@ import com.point56.android.cryptoapp.R
 import com.point56.android.cryptoapp.databinding.ActivityCoinPriceListBinding
 import com.point56.android.cryptoapp.domain.CoinInfo
 import com.point56.android.cryptoapp.presentation.adapters.CoinInfoAdapter
+import javax.inject.Inject
 
 class CoinPriceListActivity : AppCompatActivity() {
 
-    private val coinViewModel by lazy {
-        ViewModelProvider(this)[CoinViewModel::class.java]
-    }
+    private lateinit var viewModel: CoinViewModel
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
 
     private val binding by lazy {
         ActivityCoinPriceListBinding.inflate(layoutInflater)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private val component by lazy {
+        (application as CoinApp).component
+    }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        component.inject(this)
+        super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val adapter = CoinInfoAdapter(this)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
@@ -34,7 +40,8 @@ class CoinPriceListActivity : AppCompatActivity() {
         }
         binding.rvCoinPriceList.adapter = adapter
         binding.rvCoinPriceList.itemAnimator = null // remove animation
-        coinViewModel.coinInfoList.observe(this) {
+        viewModel = ViewModelProvider(this, viewModelFactory)[CoinViewModel::class.java]
+        viewModel.coinInfoList.observe(this) {
             adapter.submitList(it)
         }
     }
