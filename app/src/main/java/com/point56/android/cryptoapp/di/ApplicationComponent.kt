@@ -1,11 +1,13 @@
 package com.point56.android.cryptoapp.di
 
 import android.app.Application
+import com.point56.android.cryptoapp.presentation.CoinApp
 import com.point56.android.cryptoapp.presentation.CoinDetailFragment
 import com.point56.android.cryptoapp.presentation.CoinPriceListActivity
 import dagger.BindsInstance
 import dagger.Component
 
+@ApplicationScope
 @Component(
     modules = [
         DataModule::class,
@@ -17,6 +19,8 @@ interface ApplicationComponent {
     fun inject(activity: CoinPriceListActivity)
 
     fun inject(fragment: CoinDetailFragment)
+
+    fun inject(application: CoinApp)
 
     @Component.Factory
     interface Factory {
